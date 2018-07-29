@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour {
 
-	// Use this for initialization
+    LevelController levelController;
+    
 	void Start () {
-		Debug.Log()
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        Global.Init();
+        levelController = LevelController.getInstance(Global.getLevelBuyId(1));
+        
+    }
 		
-	}
+	void Update () {
+        
+    }
+
+    private void CreateObjects() {
+
+
+    }
 }
