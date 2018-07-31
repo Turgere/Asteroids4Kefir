@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameObjectScript : MonoBehaviour {
 
     private Global.GameObjectTypes objectType;
-
-
+    
     // Use this for initialization
     void Start () {
 	    	
@@ -16,4 +15,16 @@ public class GameObjectScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void Init(Global.GameObjectTypes ObjectType) {
+        objectType = ObjectType;
+        gameObject.name = ObjectType.ToString();
+
+        setSprite();
+    }
+
+    private void setSprite() {
+        SpriteRenderer spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer.sprite = Global.getSpriteBuyGameObjectType(objectType);
+    }
 }
